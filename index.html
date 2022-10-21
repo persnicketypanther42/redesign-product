@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hacker News</title>
+    <!-- Latest compiled and minified bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <!-- Latest compiled JavaScript bundle -->
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <!-- Latest compiled JavaScript library -->
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <!-- Latest compiled Popper -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> -->
+    <!-- import custom CSS styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+    <!-- page content goes into <body> -->
+  <body>
+    <nav class="navbar navbar-expand-xl">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="https://www.ycombinator.com/packs/static/ycdc/ycombinator-logo-ee6c80faf1d1ce2491d8.png">Hacker News</a>
+        <button class="navbar-toggler" id="toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-controls="navbarNav">
+            <span class="navbar-toggler-icon" color></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" @focusin="toggleMenu">
+          <ul class="navbar-nav me-auto">
+            <li class = "navbar-item"><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">new</a></li>
+            <li class = "navbar-item"><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">past</a></li>
+            <li class = "navbar-item"><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">threads</a></li>
+            <li class = "navbar-item"><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">comments</a></li>
+            <li class = "navbar-item"><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">ask</a></li>
+            <li class = "navbar-item"><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">show</a></li>
+            <li class = "navbar-item"><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">jobs</a></li>
+            <li class = "navbar-item"><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">submit</a></li>
+            <li class = "navbar-item"><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">unhide articles</a></li>
+            <li class = "navbar-item"><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">login</a></li>
+            <li class = "navbar-item"><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">more</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="scrollable">
+      <div class="searchbar">
+        <input type="text" class="form-control" aria-describedby="Search Bar" placeholder="search all posts"</div>
+        <img src="assets/Search.svg" height="50px" width="50px" alt="Search icon">
+      </div>
+      <div id="posts-header">Recent Posts</div>
+      <nav aria-label="Page navigation">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#"><</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">></a></li>
+        </ul>
+      </nav>
+      <div class="d-flex flex-column justify-content-space-around align-items-center">
+        <div class="card">
+          <div class="card-body">
+            <div class="number">1.</div>
+            <div class="title">The HTTP crash course nobody asked for<img src="assets/Link.svg" alt="Link icon"></div>
+            <div class="author">3 hours ago by <u>gbrown</u></div>
+            <div class="points">138<img src="assets/Upvote_Empty.svg" alt="Upvote button"></div>
+            <div class="comments">10<img height="50" src="assets/Discussion_Active.svg" alt="Discussion status icon"></div>
+            <div class="buttons">
+              <button class="link-btn">view discussion</button>
+              <button class="link-btn">view related</button>
+              <button class="hide-btn">hide post</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="number">2.</div>
+            <div class="title">How I make my rugs<img src="assets/Link.svg" alt="Link icon"></div>
+            <div class="author">4 hours ago by <u>p44v9n</u></div>
+            <div class="points">118<img src="assets/Upvote_Empty.svg" alt="Upvote button"></div>
+            <div class="comments">0<img height="50" src="assets/Discussion_Empty.svg" alt="Discussion status icon"></div>
+            <div class="buttons">
+              <button class="link-btn">view discussion</button>
+              <button class="link-btn">view related</button>
+              <button class="hide-btn">hide post</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="number">3.</div>
+            <div class="title">SHA-3 Buffer Overflow<img src="assets/Link.svg" alt="Link icon"></div>
+            <div class="author">4 hours ago by <u>cbzbc</u></div>
+            <div class="points">94<img src="assets/Upvote_Empty.svg" alt="Upvote button"></div>
+            <div class="comments">10<img height="50" src="assets/Discussion_Active.svg" alt="Discussion status icon"></div>
+            <div class="buttons">
+              <button class="link-btn">view discussion</button>
+              <button class="link-btn">view related</button>
+              <button class="hide-btn">hide post</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="number">4.</div>
+            <div class="title">Project Wisdom for Red Hat<img src="assets/Link.svg" alt="Link icon"></div>
+            <div class="author">4 hours ago by <u>tosh</u></div>
+            <div class="points">92<img src="assets/Upvote_Empty.svg" alt="Upvote button"></div>
+            <div class="comments">43<img height="50" src="assets/Discussion_Active.svg" alt="Discussion status icon"></div>
+            <div class="buttons">
+              <button class="link-btn">view discussion</button>
+              <button class="link-btn">view related</button>
+              <button class="hide-btn">hide post</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="number">5.</div>
+            <div class="title">CT Scans of Batteries<img src="assets/Link.svg" alt="Link icon"></div>
+            <div class="author">4 hours ago by <u>p44v9n</u></div>
+            <div class="points">1230<img src="assets/Upvote_Full.svg" alt="Upvote button"></div>
+            <div class="comments">232<img height="50" src="assets/Discussion_Active.svg" alt="Discussion status icon"></div>
+            <div class="buttons">
+              <button class="link-btn">view discussion</button>
+              <button class="link-btn">view related</button>
+              <button class="hide-btn">hide post</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="number">6.</div>
+            <div class="title">DaVinci Resolve for iPad<img src="assets/Link.svg" alt="Link icon"></div>
+            <div class="author">4 hours ago by <u>slay_soul_sister</u></div>
+            <div class="points">22<img src="assets/Upvote_Empty.svg" alt="Upvote button"></div>
+            <div class="comments">12<img height="50" src="assets/Discussion_Active.svg" alt="Discussion status icon"></div>
+            <div class="buttons">
+              <button class="link-btn">view discussion</button>
+              <button class="link-btn">view related</button>
+              <button class="hide-btn">hide post</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="number">7.</div>
+            <div class="title">MagicDNS is generally available<img src="assets/Link.svg" alt="Link icon"></div>
+            <div class="author">5 hours ago by <u>dagmz</u></div>
+            <div class="points">19<img src="assets/Upvote_Full.svg" alt="Upvote button"></div>
+            <div class="comments">0<img height="50" src="assets/Discussion_Empty.svg" alt="Discussion status icon"></div>
+            <div class="buttons">
+              <button class="link-btn">view discussion</button>
+              <button class="link-btn">view related</button>
+              <button class="hide-btn">hide post</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="number">8.</div>
+            <div class="title">Stop Scanning Me<img src="assets/Link.svg" alt="Link icon"></div>
+            <div class="author">6 hours ago by <u>p44v9n</u></div>
+            <div class="points">56<img src="assets/Upvote_Full.svg" alt="Upvote button"></div>
+            <div class="comments">38<img height="50" src="assets/Discussion_Active.svg" alt="Discussion status icon"></div>
+            <div class="buttons">
+              <button class="link-btn">view discussion</button>
+              <button class="link-btn">view related</button>
+              <button class="hide-btn">hide post</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="number">9.</div>
+            <div class="title">Hyrum's Law<img src="assets/Link.svg" alt="Link icon"></div>
+            <div class="author">7 hours ago by <u>nopes</u></div>
+            <div class="points">12<img src="assets/Upvote_Empty.svg" alt="Upvote button"></div>
+            <div class="comments">1<img height="50" src="assets/Discussion_Active.svg" alt="Discussion status icon"></div>
+            <div class="buttons">
+              <button class="link-btn">view discussion</button>
+              <button class="link-btn">view related</button>
+              <button class="hide-btn">hide post</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="number">10.</div>
+            <div class="title">How I make my rugs<img src="assets/Link.svg" alt="Link icon"></div>
+            <div class="author">4 hours ago by <u>pizza</u></div>
+            <div class="points">118<img src="assets/Upvote_Empty.svg" alt="Upvote button"></div>
+            <div class="comments">0<img height="50" src="assets/Discussion_Empty.svg" alt="Discussion status icon"></div>
+            <div class="buttons">
+              <button class="link-btn">view discussion</button>
+              <button class="link-btn">view related</button>
+              <button class="hide-btn">hide post</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="number">11.</div>
+            <div class="title">Vertical Flutes<img src="assets/Link.svg" alt="Link icon"></div>
+            <div class="author">7 hours ago by <u>asos_o</u></div>
+            <div class="points">1193<img src="assets/Upvote_Full.svg" alt="Upvote button"></div>
+            <div class="comments">276<img height="50" src="assets/Discussion_Active.svg" alt="Discussion status icon"></div>
+            <div class="buttons">
+              <button class="link-btn">view discussion</button>
+              <button class="link-btn">view related</button>
+              <button class="hide-btn">hide post</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="number">12.</div>
+            <div class="title">Vertical Flutes<img src="assets/Link.svg" alt="Link icon"></div>
+            <div class="author">7 hours ago by <u>nestya</u></div>
+            <div class="points">1193<img src="assets/Upvote_Full.svg" alt="Upvote button"></div>
+            <div class="comments">276<img height="50" src="assets/Discussion_Active.svg" alt="Discussion status icon"></div>
+            <div class="buttons">
+              <button class="link-btn">view discussion</button>
+              <button class="link-btn">view related</button>
+              <button class="hide-btn">hide post</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="number">13.</div>
+            <div class="title">OpenBSD 7.2<img src="assets/Link.svg" alt="Link icon"></div>
+            <div class="author">7 hours ago by <u>sduofn</u></div>
+            <div class="points">100<img src="assets/Upvote_Full.svg" alt="Upvote button"></div>
+            <div class="comments">0<img height="50" src="assets/Discussion_Empty.svg" alt="Discussion status icon"></div>
+            <div class="buttons">
+              <button class="link-btn">view discussion</button>
+              <button class="link-btn">view related</button>
+              <button class="hide-btn">hide post</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="number">14.</div>
+            <div class="title">We're Drowning<img src="assets/Link.svg" alt="Link icon"></div>
+            <div class="author">8 hours ago by <u>wero_!2</u></div>
+            <div class="points">123<img src="assets/Upvote_Empty.svg" alt="Upvote button"></div>
+            <div class="comments">12<img height="50" src="assets/Discussion_Active.svg" alt="Discussion status icon"></div>
+            <div class="buttons">
+              <button class="link-btn">view discussion</button>
+              <button class="link-btn">view related</button>
+              <button class="hide-btn">hide post</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="number">15.</div>
+            <div class="title">State of CSS<img src="assets/Link.svg" alt="Link icon"></div>
+            <div class="author">9 hours ago by <u>acadian</u></div>
+            <div class="points">123<img src="assets/Upvote_Full.svg" alt="Upvote button"></div>
+            <div class="comments">12<img height="50" src="assets/Discussion_Active.svg" alt="Discussion status icon"></div>
+            <div class="buttons">
+              <button class="link-btn">view discussion</button>
+              <button class="link-btn">view related</button>
+              <button class="hide-btn">hide post</button>
+            </div>
+          </div>
+        </div>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#"><</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">></a></li>
+          </ul>
+        </nav>
+        <div class="searchbar">
+          <input type="text" class="form-control" aria-describedby="Search Bar" placeholder="search all posts"</div>
+          <img src="assets/Search.svg" height="50px" width="50px" alt="Search icon">
+        </div>
+      </div>  
+    </div>  
+    <div id="footer">
+      <h4>Applications are open for YC Winter 2023</h4>
+      <div id="footer-links">
+        <button class="link-btn">Guidelines</button>
+        <button class="link-btn">FAQ</button>
+        <button class="link-btn">Lists</button>
+        <button class="link-btn">API</button>
+        <button class="link-btn">Security</button>
+        <button class="link-btn">Contact</button>
+      </div>
+    </div>
+  </body>
+</html>
